@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Campus Lost & Found</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <h1>Campus Lost &amp; Found</h1>
+    <p>Report a lost item, hand in something you found, or check what's been claimed.</p>
+  </header>
+
+  <main class="container">
+
+    <!-- Add / Edit Form -->
+    <section class="card">
+      <h2 id="form-title">Report an Item</h2>
+      <form id="item-form">
+        <input type="hidden" id="item-id">
+
+        <div class="field">
+          <label for="item_name">Item name</label>
+          <input type="text" id="item_name" placeholder="e.g. Blue water bottle" required>
+        </div>
+
+        <div class="field">
+          <label for="description">Description</label>
+          <textarea id="description" rows="2" placeholder="Any details that help identify it"></textarea>
+        </div>
+
+        <div class="field-row">
+          <div class="field">
+            <label for="category">Category</label>
+            <select id="category">
+              <option value="Electronics">Electronics</option>
+              <option value="Documents">Documents</option>
+              <option value="Clothing">Clothing</option>
+              <option value="Accessories">Accessories</option>
+              <option value="Books">Books</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="status">Status</label>
+            <select id="status">
+              <option value="Lost">Lost</option>
+              <option value="Found">Found</option>
+              <option value="Claimed">Claimed</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="field-row">
+          <div class="field">
+            <label for="location">Location</label>
+            <input type="text" id="location" placeholder="e.g. Library, 2nd floor" required>
+          </div>
+
+          <div class="field">
+            <label for="contact_info">Contact info</label>
+            <input type="text" id="contact_info" placeholder="Phone or email" required>
+          </div>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" id="submit-btn">Add Report</button>
+          <button type="button" id="cancel-btn" class="secondary" hidden>Cancel</button>
+        </div>
+      </form>
+      <p id="form-message" class="message"></p>
+    </section>
+
+    <!-- List of items -->
+    <section class="card">
+      <div class="list-header">
+        <h2>Reported Items</h2>
+        <div class="filters">
+          <input type="text" id="search-box" placeholder="Search name, location, category...">
+          <select id="status-filter">
+            <option value="">All statuses</option>
+            <option value="Lost">Lost</option>
+            <option value="Found">Found</option>
+            <option value="Claimed">Claimed</option>
+          </select>
+        </div>
+      </div>
+
+      <div id="item-list" class="item-list">
+        <!-- Item cards inserted here by script.js -->
+      </div>
+      <p id="list-message" class="message"></p>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
